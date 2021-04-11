@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "936147967442",
+    "project_id": "kotlin-calculator-b8d8d",
+    "storage_bucket": "kotlin-calculator-b8d8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936147967442:android:272376e66b4c014c853c0b",
+        "android_client_info": {
+          "package_name": "com.fairoozp.kotlincalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936147967442-m9uc4fbv571ei1i4lvhm3put4hjpubq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWz1vjocMQrZDCPVg_1DU8Z5ujcxOqRdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936147967442-m9uc4fbv571ei1i4lvhm3put4hjpubq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
