@@ -15,7 +15,7 @@ import com.example.database.DatabaseContainer.PersonTable.Companion.TABLE_NAME
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val PersonTable = " CREATE TABLE " +
+        val personTable = " CREATE TABLE " +
                 TABLE_NAME + " ( " +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 NAME_COLUMN + " TEXT, " +
@@ -23,7 +23,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
                 EMAIL_COLUMN + " TEXT, " +
                 ADDRESS_COLUMN + " TEXT " + " ) "
 
-        db!!.execSQL(PersonTable)
+        db!!.execSQL(personTable)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -71,6 +71,13 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         val update_data = db!!.update(TABLE_NAME, contentValues , "$ID=?",arrayOf(id))
         db.close()
         return !update_data.equals(-1)
+    }
+
+    //DeleteAll
+    fun deleteAll(){
+        val  db : SQLiteDatabase? = this.writableDatabase
+        db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        onCreate(db)
     }
 
     companion object{
