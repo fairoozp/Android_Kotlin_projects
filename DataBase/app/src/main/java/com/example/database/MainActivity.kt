@@ -9,15 +9,14 @@ import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
-
-    private val read : Button = findViewById(R.id.read)
-    private val add : FloatingActionButton = findViewById(R.id.add)
-    private val view : TextView = findViewById(R.id.view)
-    private val databaseHelper = DatabaseHelper(this)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val read : Button = findViewById(R.id.read)
+        val add : FloatingActionButton = findViewById(R.id.add)
+        val view : TextView = findViewById(R.id.view)
+        val databaseHelper = DatabaseHelper(this)
 
         add.setOnClickListener {
             startActivity( Intent(this, MainActivity2::class.java))
