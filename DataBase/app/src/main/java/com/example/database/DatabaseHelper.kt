@@ -11,6 +11,7 @@ import com.example.database.DatabaseContainer.PersonTable.Companion.EMAIL_COLUMN
 import com.example.database.DatabaseContainer.PersonTable.Companion.NAME_COLUMN
 import com.example.database.DatabaseContainer.PersonTable.Companion.PHONE_COLUMN
 import com.example.database.DatabaseContainer.PersonTable.Companion.TABLE_NAME
+import com.google.android.material.tabs.TabLayout
 
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -45,6 +46,26 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         val db : SQLiteDatabase? = this.writableDatabase
         val read : Cursor = db!!.rawQuery("SELECT * FROM $TABLE_NAME",null)
         return read
+    }
+
+    //Delete
+    fun deleteData(id : String) : Boolean {
+        val db : SQLiteDatabase? = this.writableDatabase
+        val delete_data = db!!.delete(TABLE_NAME, "$BaseColumns_ID=?", arrayOf(id))
+        return !delete_data.equals(-1)
+    }
+
+    //Update
+    fun updatData(id : String, name : String, phone : String, email : String, address : String) : Boolean {
+        val  db : SQLiteDatabase? = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(NAME_COLUMN,name)
+        contentValues.put(PHONE_COLUMN,phone)
+        contentValues.put(EMAIL_COLUMN,email)
+        contentValues.put(ADDRESS_COLUMN,address)
+        val update_data = db!!.update(TABLE_NAME, contentValues , "$BaseColumns_ID=?",arrayOf(id))
+        db.close()
+        return !update_data.equals(-1)
     }
 
     companion object{
