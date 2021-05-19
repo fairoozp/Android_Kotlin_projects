@@ -40,8 +40,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
-                android:text=""
-                android:textColor="@color/white"
                 android:textSize="25sp" />
         </LinearLayout>
     </ScrollView>
@@ -53,7 +51,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="READ"
-        android:textColor="#000000"
         app:backgroundTint="#1A73E8"
         app:layout_constraintBottom_toBottomOf="@+id/remove"
         app:layout_constraintEnd_toStartOf="@+id/add"
@@ -104,7 +101,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="update"
-        android:textColor="#000000"
         app:backgroundTint="#1A73E8"
         app:layout_constraintBottom_toTopOf="@+id/read"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +116,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:text="delete"
-        android:textColor="#000000"
         app:backgroundTint="#1A73E8"
         app:layout_constraintBottom_toTopOf="@+id/read"
         app:layout_constraintEnd_toStartOf="@+id/update"
