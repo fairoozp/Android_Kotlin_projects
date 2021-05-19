@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         read.setOnClickListener {
             val data = databaseHelper.readData()
             val stringBuffer = StringBuffer()
-            if (data != null && data.count>0){
+            if (data.count>0){
                 while (data.moveToNext()){
                     stringBuffer.append("ID : ${data.getString(0)}\n")
                     stringBuffer.append("NAME : ${data.getString(1)}\n")
