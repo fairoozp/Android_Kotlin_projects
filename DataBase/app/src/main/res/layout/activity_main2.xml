@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".MainActivity2">
 
     <LinearLayout
@@ -33,8 +32,6 @@
             android:gravity="center"
             android:hint="Name"
             android:inputType="textPersonName"
-            android:textColor="@color/white"
-            android:textColorHint="#80FFFFFF"
             tools:ignore="Autofill" />
 
         <EditText
@@ -49,8 +46,6 @@
             android:gravity="center"
             android:hint="Phone Number"
             android:inputType="phone"
-            android:textColor="@color/white"
-            android:textColorHint="#80FFFFFF"
             tools:ignore="Autofill" />
 
         <EditText
@@ -65,8 +60,6 @@
             android:gravity="center"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/white"
-            android:textColorHint="#80FFFFFF"
             tools:ignore="Autofill" />
 
         <EditText
@@ -81,15 +74,12 @@
             android:gravity="center|top"
             android:hint="Postal Address"
             android:inputType="textMultiLine"
-            android:textColor="@color/white"
-            android:textColorHint="#80FFFFFF"
             tools:ignore="Autofill" />
 
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#33FFFFFF"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
@@ -104,9 +94,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="Clear"
-            android:textColor="@color/white"
-            app:backgroundTint="#66BB6A"
-            app:rippleColor="#2E7D32" />
+            app:backgroundTint="#1A73E8"
+            app:rippleColor="#801A73E8" />
 
         <Button
             android:id="@+id/save_bt"
@@ -117,9 +106,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="save"
-            android:textColor="@color/white"
-            app:backgroundTint="#66BB6A"
-            app:rippleColor="#2E7D32" />
+            app:backgroundTint="#1A73E8"
+            app:rippleColor="#801A73E8" />
 
         <Button
             android:id="@+id/home_bt"
@@ -130,9 +118,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:text="home"
-            android:textColor="@color/white"
-            app:backgroundTint="#66BB6A"
-            app:rippleColor="#2E7D32" />
+            app:backgroundTint="#1A73E8"
+            app:rippleColor="#801A73E8" />7
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
