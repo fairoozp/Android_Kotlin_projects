@@ -10,10 +10,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-    val read : Button = findViewById(R.id.read)
-    val add : FloatingActionButton = findViewById(R.id.add)
-    val view : TextView = findViewById(R.id.view)
-    val databaseHelper = DatabaseHelper(this)
+    private val read : Button = findViewById(R.id.read)
+    private val add : FloatingActionButton = findViewById(R.id.add)
+    private val view : TextView = findViewById(R.id.view)
+    private val databaseHelper = DatabaseHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
