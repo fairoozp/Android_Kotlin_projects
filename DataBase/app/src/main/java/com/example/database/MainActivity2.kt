@@ -9,18 +9,18 @@ import android.widget.Toast
 
 class MainActivity2 : AppCompatActivity() {
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-            val name1 : EditText = findViewById(R.id.name)
-            val phone1 :EditText = findViewById(R.id.phone)
-            val email1 : EditText = findViewById(R.id.email)
-            val address1 : EditText = findViewById(R.id.address)
-            val saveBt : Button = findViewById(R.id.save_bt)
-            val clearBt : Button = findViewById(R.id.clear_bt)
-            val homeBt : Button = findViewById(R.id.home_bt)
-            val databaseHelper = DatabaseHelper(this)
+        val name1 : EditText = findViewById(R.id.name)
+        val phone1 :EditText = findViewById(R.id.phone)
+        val email1 : EditText = findViewById(R.id.email)
+        val address1 : EditText = findViewById(R.id.address)
+        val saveBt : Button = findViewById(R.id.save_bt)
+        val clearBt : Button = findViewById(R.id.clear_bt)
+        val homeBt : Button = findViewById(R.id.home_bt)
+        val databaseHelper = DatabaseHelper(this)
 
         saveBt.setOnClickListener {
             val name = name1.text.toString()

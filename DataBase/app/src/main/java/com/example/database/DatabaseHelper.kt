@@ -6,17 +6,22 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.database.DatabaseContainer.PersonTable.Companion.ADDRESS_COLUMN
-import com.example.database.DatabaseContainer.PersonTable.Companion.BaseColumns_ID
+import com.example.database.DatabaseContainer.PersonTable.Companion.ID
 import com.example.database.DatabaseContainer.PersonTable.Companion.EMAIL_COLUMN
 import com.example.database.DatabaseContainer.PersonTable.Companion.NAME_COLUMN
 import com.example.database.DatabaseContainer.PersonTable.Companion.PHONE_COLUMN
 import com.example.database.DatabaseContainer.PersonTable.Companion.TABLE_NAME
-import com.google.android.material.tabs.TabLayout
 
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val PersonTable = "CREATE TABLE" + TABLE_NAME + "(" + BaseColumns_ID + "INTEGER PRIMARY KEY AUTOINCREMENT" + NAME_COLUMN + "TEXT" + PHONE_COLUMN + "INTEGER" + EMAIL_COLUMN + "TEXT" + ADDRESS_COLUMN + "TEXT" + ")"
+        val PersonTable = " CREATE TABLE " +
+                TABLE_NAME + " ( " +
+                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                NAME_COLUMN + " TEXT, " +
+                PHONE_COLUMN + " INTEGER, " +
+                EMAIL_COLUMN + " TEXT, " +
+                ADDRESS_COLUMN + " TEXT " + " ) "
 
         db!!.execSQL(PersonTable)
     }
@@ -51,7 +56,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     //Delete
     fun deleteData(id : String) : Boolean {
         val db : SQLiteDatabase? = this.writableDatabase
-        val delete_data = db!!.delete(TABLE_NAME, "$BaseColumns_ID=?", arrayOf(id))
+        val delete_data = db!!.delete(TABLE_NAME, "$ID=?", arrayOf(id))
         return !delete_data.equals(-1)
     }
 
@@ -63,7 +68,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         contentValues.put(PHONE_COLUMN,phone)
         contentValues.put(EMAIL_COLUMN,email)
         contentValues.put(ADDRESS_COLUMN,address)
-        val update_data = db!!.update(TABLE_NAME, contentValues , "$BaseColumns_ID=?",arrayOf(id))
+        val update_data = db!!.update(TABLE_NAME, contentValues , "$ID=?",arrayOf(id))
         db.close()
         return !update_data.equals(-1)
     }

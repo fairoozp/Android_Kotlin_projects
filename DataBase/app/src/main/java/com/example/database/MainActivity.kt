@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
             val stringBuffer = StringBuffer()
             if (data.count>0){
                 while (data.moveToNext()){
-                    stringBuffer.append("ID : ${data.getString(0)}\n")
+                    stringBuffer.append("ID : ${data.getString(0)}\n\n")
                     stringBuffer.append("NAME : ${data.getString(1)}\n")
                     stringBuffer.append("PHONE NUMBER : ${data.getString(2)}\n")
                     stringBuffer.append("EMAIL : ${data.getString(3)}\n")
-                    stringBuffer.append("ADDRESS : ${data.getString(4)}\n")
+                    stringBuffer.append("ADDRESS : ${data.getString(4)}\n\n\n\n")
                 }
                 view.text = stringBuffer.toString()
                 Toast.makeText(this, "Data Retrieved", Toast.LENGTH_SHORT).show()
