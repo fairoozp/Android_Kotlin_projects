@@ -42,9 +42,9 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
 
     //Raed
     fun readData() : Cursor {
-        val db : SQLiteOpenHelper = this.writableDatabase
-        //val read : Cursor = db.rawQuery("SELECT * FROM $TABLE_NAME",null)
-        //return read
+        val db : SQLiteDatabase? = this.writableDatabase
+        val read : Cursor = db!!.rawQuery("SELECT * FROM $TABLE_NAME",null)
+        return read
     }
 
     companion object{
