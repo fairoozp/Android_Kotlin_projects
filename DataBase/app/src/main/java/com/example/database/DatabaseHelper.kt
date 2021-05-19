@@ -2,6 +2,7 @@ package com.example.database
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.database.DatabaseContainer.PersonTable.Companion.ADDRESS_COLUMN
@@ -40,6 +41,11 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     }
 
     //Raed
+    fun readData() : Cursor {
+        val db : SQLiteOpenHelper = this.writableDatabase
+        //val read : Cursor = db.rawQuery("SELECT * FROM $TABLE_NAME",null)
+        //return read
+    }
 
     companion object{
         private const val DATABASE_NAME = "Person.db"
