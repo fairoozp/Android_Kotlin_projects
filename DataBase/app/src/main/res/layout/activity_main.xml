@@ -30,6 +30,7 @@
             android:showDividers="middle"
             android:divider="?android:listDivider"
             android:dividerPadding="16dp"
+            android:clickable="true"
             android:orientation="vertical">
 
             <TextView
