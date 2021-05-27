@@ -7,6 +7,7 @@ import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.ID
 import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.NOTES
 import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.TABLE_NAME
 
+
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
         val stickyNotes = " CREATE TABLE " +
@@ -15,7 +16,6 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
                 NOTES + " TEXT " + " ) "
         db!!.execSQL(stickyNotes)
     }
-
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
     }
