@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "282052545813",
+    "project_id": "sugar-cd-calculator",
+    "storage_bucket": "sugar-cd-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282052545813:android:5a91b7b820a680374c2d1c",
+        "android_client_info": {
+          "package_name": "com.example.sugarcdcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282052545813-rcc9jj1clnt40n81va75eihmd361s2gh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNtDZOASJsxIztvss5JLvp5xqa5_EgAxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282052545813-rcc9jj1clnt40n81va75eihmd361s2gh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
