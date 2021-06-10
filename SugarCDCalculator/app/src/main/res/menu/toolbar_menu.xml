@@ -4,5 +4,5 @@
     <item
         android:id="@+id/read"
         android:icon="@drawable/data"
-        android:title=" DATA" />
+        android:title="READ DATA" />
 </menu>

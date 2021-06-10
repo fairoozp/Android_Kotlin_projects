@@ -27,17 +27,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav" />
+        app:menu="@menu/bottom_nav" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.sugarcdcalculator.FBS"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:layout="@layout/fragment_f_b_s"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout="@layout/fragment_f_b_s"
+        tools:layout_editor_absoluteX="347dp" />
 
     <TextView
         android:id="@+id/textView"
