@@ -1,4 +1,4 @@
-package com.example.sugarcdcalculator
+package com.example.DBS
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.sugarcdcalculator
+package com.example.DBS
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
