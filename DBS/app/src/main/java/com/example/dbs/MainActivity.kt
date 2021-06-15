@@ -1,6 +1,7 @@
 package com.example.dbs
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,27 +14,28 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("SetTextI18n")
 
-    private val tdd : EditText = findViewById(R.id.tdd)
-    private val postFood : EditText = findViewById(R.id.postFood)
-    private val foodCarb : EditText = findViewById(R.id.foodCarb)
-    private val isf : TextView = findViewById(R.id.isf)
-    private val icr : TextView = findViewById(R.id.icr)
-    private val cd : TextView = findViewById(R.id.cd)
-    private val sv : Button = findViewById(R.id.sv)
-    private val calc : Button = findViewById(R.id.calc)
-    private val databaseHelper = DatabaseHelper(this)
-
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val tdd : EditText = findViewById(R.id.tdd)
+        val postFood : EditText = findViewById(R.id.postFood)
+        val foodCarb : EditText = findViewById(R.id.foodCarb)
+        val isf : TextView = findViewById(R.id.isf)
+        val icr : TextView = findViewById(R.id.icr)
+        val cd : TextView = findViewById(R.id.cd)
+        val sv : Button = findViewById(R.id.sv)
+        val calc : Button = findViewById(R.id.calc)
+        val read : ImageButton = findViewById(R.id.read)
+        val databaseHelper = DatabaseHelper(this)
+
         var tdd1 = 0f
         var postFood1 = 0f
         var foodCarb1 = 0f
-        var isf1 = 0f
-        var icr1 = 0f
-        var cd1 = 0f
+        var isf1: Float
+        var icr1: Float
+        var cd1: Float
+        var type = "FBS"
 
         var t = 1
         val change : TextView = findViewById(R.id.change)
@@ -43,10 +45,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.fbs->{
                     change.text = "FBS"
                     t=1
+                    type = "FBS"
                 }
                 R.id.rbs->{
                     change.text = "RBS"
                     t=2
+                    type = "RBS"
                 }
 
             }
@@ -77,23 +81,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
         sv.setOnClickListener {
-            val date = Calendar.getInstance().time
-            val result : Boolean = databaseHelper.insertData(date.toString(),tdd1.toString(),postFood1.toString(),foodCarb1.toString(),isf1.toString(),icr1.toString(),cd1.toString())
-            when{
-                result -> Toast.makeText(applicationContext, "Data Saved", Toast.LENGTH_SHORT).show()
-                else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
+            if (tdd.text.isNotEmpty() && postFood.text.isNotEmpty() && foodCarb.text.isNotEmpty() && isf.text.isNotEmpty() && icr.text.isNotEmpty() && cd.text.isNotEmpty()){
+                val date = Calendar.getInstance().time
+                isf1 = isf.text.toString().toFloat()
+                icr1 = icr.text.toString().toFloat()
+                cd1 = cd.text.toString().toFloat()
+                val result : Boolean = databaseHelper.insertData(type,date.toString(),tdd1.toString(),postFood1.toString(),foodCarb1.toString(),isf1.toString(),icr1.toString(),cd1.toString())
+                when{
+                    result -> Toast.makeText(applicationContext, "Data Saved", Toast.LENGTH_SHORT).show()
+                    else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
+                }
+                tdd.text.clear()
+                postFood.text.clear()
+                foodCarb.text.clear()
+                isf.text = ""
+                icr.text = ""
+                cd.text = ""
             }
-            clearAll()
+            else{
+                Toast.makeText(this, "There is Nothing to Save", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    private fun clearAll() {
-        tdd.text.clear()
-        postFood.text.clear()
-        foodCarb.text.clear()
-        isf.text = "0"
-        icr.text = "0"
-        cd.text = "0"
+        read.setOnClickListener {
+            startActivity(Intent(this,ReadData::class.java))
+        }
     }
 }

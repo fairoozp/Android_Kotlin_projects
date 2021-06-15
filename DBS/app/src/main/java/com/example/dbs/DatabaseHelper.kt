@@ -14,6 +14,7 @@ import com.example.dbs.DatabaseContainer.DBS.Companion.ISF
 import com.example.dbs.DatabaseContainer.DBS.Companion.PF
 import com.example.dbs.DatabaseContainer.DBS.Companion.TABLE_NAME
 import com.example.dbs.DatabaseContainer.DBS.Companion.TDD
+import com.example.dbs.DatabaseContainer.DBS.Companion.TYPE
 
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -25,6 +26,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     override fun onCreate(db: SQLiteDatabase?) {
         val dbs = "CREATE TABLE " + TABLE_NAME + " ( " +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                TYPE + " TEXT, " +
                 DATE + " TEXT, " +
                 TDD + " TEXT, " +
                 PF + " TEXT, " +
@@ -36,9 +38,10 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     }
 
     //Insert
-    fun insertData(date : String, tdd1 : String, postFood : String, foodCarb : String, isf1 : String, icr1 : String, cd1 : String) : Boolean {
+    fun insertData(type : String, date : String, tdd1 : String, postFood : String, foodCarb : String, isf1 : String, icr1 : String, cd1 : String) : Boolean {
         val  db : SQLiteDatabase? = this.writableDatabase
         val contentValues = ContentValues()
+        contentValues.put(TYPE,type)
         contentValues.put(DATE,date)
         contentValues.put(TDD,tdd1)
         contentValues.put(PF,postFood)
@@ -68,7 +71,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     }
 
     //Update
-    fun updatData(id : String, date : String, tdd1 : String, postFood : String, foodCarb : String, isf1 : String, icr1 : String, cd1 : String) : Boolean {
+    fun updateData(id : String, date : String, tdd1 : String, postFood : String, foodCarb : String, isf1 : String, icr1 : String, cd1 : String) : Boolean {
         val  db : SQLiteDatabase? = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(DATE,date)
