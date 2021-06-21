@@ -46,6 +46,5 @@ class ReadData : AppCompatActivity() {
             Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show()
             //Toast.makeText(this, "Wait For This Feature", Toast.LENGTH_SHORT).show()
         }
-
     }
 }
