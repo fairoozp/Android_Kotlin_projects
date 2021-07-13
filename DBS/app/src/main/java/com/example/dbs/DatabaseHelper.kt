@@ -60,7 +60,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     //Raed
     fun readData(): Cursor {
         val db: SQLiteDatabase? = this.writableDatabase
-        return db!!.rawQuery("SELECT * FROM $TABLE_NAME", null)
+        return db!!.rawQuery("SELECT * FROM $TABLE_NAME ORDER BY id DESC", null)
     }
 
     //Delete
