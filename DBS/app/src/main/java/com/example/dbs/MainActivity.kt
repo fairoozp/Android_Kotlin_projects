@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         var t = 1
         val change : TextView = findViewById(R.id.change)
         val bottomNavigationView : BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.setOnNavigationItemSelectedListener {
+        bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.fbs->{
                     change.text = "FBS"
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-            true
+            return@setOnItemSelectedListener true
         }
 
         calc.setOnClickListener {
