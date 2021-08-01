@@ -12,5 +12,6 @@ class MainActivity : AppCompatActivity() {
 
         val addBt : FloatingActionButton = findViewById(R.id.addBt)
         addBt.setOnClickListener { startActivity(Intent(this, AddNewNotes::class.java)) }
+
     }
 }
