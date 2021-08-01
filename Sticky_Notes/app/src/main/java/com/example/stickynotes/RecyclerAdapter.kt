@@ -22,9 +22,10 @@ class RecyclerAdapter (private var itemsList: List<String>, var context: Context
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemsList[position]
+        //val id = itemsList[getItemId(position).toInt()]
         holder.itemTextView.text = item
         holder.itemView.setOnClickListener {
-            //Toast.makeText(context, "Update $position", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "Update $id", Toast.LENGTH_SHORT).show()
             context.startActivity(Intent(context, update::class.java).putExtra("notes",item))
         }
     }

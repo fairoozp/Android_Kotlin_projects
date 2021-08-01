@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Data Retrieved", Toast.LENGTH_SHORT).show()
         }
 
-        RecyclerAdapter .notifyDataSetChanged()
+        RecyclerAdapter.notifyDataSetChanged()
     }
 
     override fun onBackPressed() {

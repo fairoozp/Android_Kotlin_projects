@@ -27,6 +27,8 @@ class update : AppCompatActivity() {
 
         clearBt.setOnClickListener { notes.text.clear() }
         homeBt.setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
+
+
         saveBt.setOnClickListener {
             if (notes.text.isNotEmpty()){
                 val notes = notes.text.toString()
@@ -39,6 +41,8 @@ class update : AppCompatActivity() {
             notes.text.clear()
             startActivity(Intent(this, MainActivity::class.java))
         }
+
+
         delete.setOnClickListener {
             val note = notes.text.toString()
             val result : Boolean = databaseHelper.delete(note)
