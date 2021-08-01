@@ -1,13 +1,15 @@
 package com.example.stickynotes
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.annotation.NonNull
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter (private var itemsList: List<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
+class RecyclerAdapter (private var itemsList: List<String>, var context: Context) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var itemTextView: TextView = view.findViewById(R.id.itemTextView)
     }
@@ -21,6 +23,10 @@ class RecyclerAdapter (private var itemsList: List<String>) : RecyclerView.Adapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemsList[position]
         holder.itemTextView.text = item
+        holder.itemView.setOnClickListener {
+            //Toast.makeText(context, "Update $position", Toast.LENGTH_SHORT).show()
+            context.startActivity(Intent(context, update::class.java).putExtra("notes",item))
+        }
     }
 
     override fun getItemCount(): Int {

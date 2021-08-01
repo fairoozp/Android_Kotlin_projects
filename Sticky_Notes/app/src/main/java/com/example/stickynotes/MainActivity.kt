@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         addBt.setOnClickListener { startActivity(Intent(this, AddNewNotes::class.java)) }
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        RecyclerAdapter = RecyclerAdapter(itemsList)
+        RecyclerAdapter = RecyclerAdapter(itemsList,this)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = RecyclerAdapter
@@ -33,26 +33,16 @@ class MainActivity : AppCompatActivity() {
         if (data.count>0) {
             while (data.moveToNext()) {
                 itemsList.add(data.getString(1))
-                //RecyclerAdapter .notifyDataSetChanged()
             }
 
             Toast.makeText(this, "Data Retrieved", Toast.LENGTH_SHORT).show()
         }
 
-        //itemsList.add("Item 1")
-        //itemsList.add("Item 2")
-        //itemsList.add("Item 3")
-        //itemsList.add("Item 4")
-        //itemsList.add("Item 5")
-        //itemsList.add("Item 6")
-        //itemsList.add("Item 7")
-        //itemsList.add("Item 8")
-        //itemsList.add("Item 9")
-        //itemsList.add("Item 10")
-        //itemsList.add("Item 11")
-        //itemsList.add("Item 12")
-        //itemsList.add("Item 13")
         RecyclerAdapter .notifyDataSetChanged()
     }
 
+    override fun onBackPressed() {
+        finishAffinity()
+        //super.onBackPressed()
+    }
 }

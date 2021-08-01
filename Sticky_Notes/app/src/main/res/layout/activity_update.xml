@@ -26,9 +26,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:ems="10"
+            android:textSize="25sp"
             android:gravity="center|top"
             android:hint="@string/enter_notes_here"
-            android:textSize="25sp"
             android:inputType="textMultiLine"
             tools:ignore="Autofill" />
     </LinearLayout>
@@ -69,6 +69,17 @@
             tools:ignore="ButtonStyle" />
 
         <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:text="delete"
+            tools:ignore="ButtonStyle" />
+
+        <Button
             android:id="@+id/homeBt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,6 +89,7 @@
             android:layout_weight="1"
             android:text="@string/home"
             tools:ignore="ButtonStyle" />
+
     </LinearLayout>
 
     <Button
@@ -87,7 +99,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/save"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

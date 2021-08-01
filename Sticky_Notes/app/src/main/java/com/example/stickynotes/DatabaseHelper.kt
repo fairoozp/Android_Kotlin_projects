@@ -38,17 +38,17 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         return db!!.rawQuery("SELECT * FROM $TABLE_NAME", null)
     }
     //Delete
-    fun delete(id : String) : Boolean {
+    fun delete(notes : String) : Boolean {
         val db : SQLiteDatabase? = this.writableDatabase
-        val deleteData = db!!.delete(TABLE_NAME, "$ID=?", arrayOf(id))
+        val deleteData = db!!.delete(TABLE_NAME, "$NOTES=?", arrayOf(notes))
         return deleteData != -1
     }
     //Update
-    fun update (id : String , notes : String) : Boolean {
+    fun update (note : String , notes: String) : Boolean {
         val db : SQLiteDatabase? = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put(NOTES,notes)
-        val updateData = db!!.update(TABLE_NAME, contentValues , "$ID=?",arrayOf(id))
+        val updateData = db!!.update(TABLE_NAME, contentValues , "$NOTES=?",arrayOf(note))
         db.close()
         return updateData != -1
     }
