@@ -12,6 +12,8 @@ class AddNewNotes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_notes)
 
+        val databaseHelper = DatabaseHelper(this)
+
         val saveBt : Button = findViewById(R.id.saveBt)
         val clearBt : Button = findViewById(R.id.clearBt)
         val homeBt : Button = findViewById(R.id.homeBt)
@@ -20,7 +22,14 @@ class AddNewNotes : AppCompatActivity() {
         clearBt.setOnClickListener { notes.text.clear() }
         homeBt.setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
         saveBt.setOnClickListener {
-            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
+            if (notes.text.isNotEmpty()){
+                val note = notes.text.toString()
+                val result : Boolean = databaseHelper.insert(note)
+                when{
+                    result -> Toast.makeText(applicationContext, "Data Saved", Toast.LENGTH_SHORT).show()
+                    else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
             notes.text.clear()
         }
     }
