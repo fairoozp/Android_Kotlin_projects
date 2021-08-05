@@ -12,15 +12,24 @@
         android:background="@drawable/border"
         android:orientation="vertical"
         android:padding="8dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/itemTextView"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="25sp" />
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center" />
     </LinearLayout>
 
 </LinearLayout>

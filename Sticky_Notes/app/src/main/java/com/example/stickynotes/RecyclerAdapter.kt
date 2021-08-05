@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
+//import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter (private var itemsList: List<String>, var context: Context) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
+class RecyclerAdapter(private var itemsList: ArrayList<NotesList>, var context: Context) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var itemTextView: TextView = view.findViewById(R.id.itemTextView)
+        var title : TextView = view.findViewById(R.id.title)
+        var note : TextView = view.findViewById(R.id.note)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,10 +24,11 @@ class RecyclerAdapter (private var itemsList: List<String>, var context: Context
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemsList[position]
         //val id = itemsList[getItemId(position).toInt()]
-        holder.itemTextView.text = item
+        holder.title.text = item.getTitle()
+        holder.note.text = item.getNote()
         holder.itemView.setOnClickListener {
             //Toast.makeText(context, "Update $id", Toast.LENGTH_SHORT).show()
-            context.startActivity(Intent(context, update::class.java).putExtra("notes",item))
+            context.startActivity(Intent(context, update::class.java).putExtra("notes",item.getID()))
         }
     }
 
