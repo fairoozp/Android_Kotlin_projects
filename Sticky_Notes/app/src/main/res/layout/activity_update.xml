@@ -85,7 +85,7 @@
             android:layout_height="5dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:background="?android:attr/listDivider" />
+            android:background="@drawable/border" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -104,8 +104,8 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:textColor="#FFFFFF"
                 android:text="@string/clear"
+                android:textColor="#FFFFFF"
                 tools:ignore="ButtonStyle,TextContrastCheck" />
 
             <Button
@@ -116,8 +116,8 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:textColor="#FFFFFF"
                 android:text="@string/delete"
+                android:textColor="#FFFFFF"
                 tools:ignore="ButtonStyle,TextContrastCheck" />
 
             <Button
@@ -128,8 +128,8 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:textColor="#FFFFFF"
                 android:text="@string/home"
+                android:textColor="#FFFFFF"
                 tools:ignore="ButtonStyle,TextContrastCheck" />
 
         </LinearLayout>
