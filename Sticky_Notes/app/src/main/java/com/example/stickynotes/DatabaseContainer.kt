@@ -7,6 +7,7 @@ object DatabaseContainer{
         companion object{
             const val TABLE_NAME = "StickyNotes"
             const val ID = "ID"
+            const val TITLE = "TITLE"
             const val NOTES = "NOTES"
         }
     }

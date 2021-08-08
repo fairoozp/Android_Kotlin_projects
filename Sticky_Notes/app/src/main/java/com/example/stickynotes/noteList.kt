@@ -8,15 +8,15 @@ class NotesList (private var id: String, private var title: String, private var 
         return title
     }
     fun getNote() : String? {
-        return id
+        return note
     }
     fun setID() : String? {
-        return note
+        return id
     }
     fun setTitle() : String? {
         return title
     }
     fun setNote() : String? {
-        return id
+        return note
     }
 }

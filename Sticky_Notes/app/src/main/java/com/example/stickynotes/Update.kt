@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-class update : AppCompatActivity() {
+class Update : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update)
@@ -18,44 +18,41 @@ class update : AppCompatActivity() {
         val clearBt : Button = findViewById(R.id.clearBt)
         val homeBt : Button = findViewById(R.id.homeBt)
         val delete : Button = findViewById(R.id.delete)
-        val notes : EditText = findViewById(R.id.notes)
+        val title1 : EditText = findViewById(R.id.title)
+        val notes1 : EditText = findViewById(R.id.notes)
 
-        val note = intent.getStringExtra("notes")
-        notes.setText(note)
-        //var data = databaseHelper.select(note.toString())
-        //Toast.makeText(this, "hello $data", Toast.LENGTH_SHORT).show()
+        val id = intent.getStringExtra("id").toString()
+        val title2 = intent.getStringExtra("title").toString()
+        val notes2 = intent.getStringExtra("notes").toString()
+        title1.setText(title2)
+        notes1.setText(notes2)
 
-        clearBt.setOnClickListener { notes.text.clear() }
+        clearBt.setOnClickListener { notes1.text.clear() }
         homeBt.setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
 
 
         saveBt.setOnClickListener {
-            if (notes.text.isNotEmpty()){
-                val notes = notes.text.toString()
-                val result : Boolean = databaseHelper.update(note.toString(),notes)
+            if (notes1.text.isNotEmpty()){
+                val title = title1.text.toString()
+                val notes = notes1.text.toString()
+                val result : Boolean = databaseHelper.update(id, title, notes)
                 when{
                     result -> Toast.makeText(applicationContext, "Data Updated", Toast.LENGTH_SHORT).show()
                     else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
                 }
             }
-            notes.text.clear()
+            notes1.text.clear()
             startActivity(Intent(this, MainActivity::class.java))
         }
 
 
         delete.setOnClickListener {
-            val note = notes.text.toString()
-            val result : Boolean = databaseHelper.delete(note)
+            val result : Boolean = databaseHelper.delete(id)
             when{
                 result -> Toast.makeText(applicationContext, "Data Deleted", Toast.LENGTH_SHORT).show()
                 else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
             }
             startActivity(Intent(this, MainActivity::class.java))
         }
-    }
-
-    override fun onBackPressed() {
-        Toast.makeText(this, "Press Home to exit", Toast.LENGTH_SHORT).show()
-        //
     }
 }

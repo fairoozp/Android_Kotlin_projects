@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_stickynotes_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StickyNotes">
-        <activity android:name=".update"></activity>
+        <activity android:name=".Update"></activity>
         <activity android:name=".AddNewNotes" />
         <activity android:name=".MainActivity">
             <intent-filter>

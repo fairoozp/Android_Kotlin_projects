@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         if (data.count>0) {
             while (data.moveToNext()) {
                 val id = data.getString(0)
-                val title = data.getString(0)
-                val note = data.getString(0)
+                val title = data.getString(1)
+                val note = data.getString(2)
                 val notesList = NotesList(id, title, note)
                 itemsList.add(notesList)
             }

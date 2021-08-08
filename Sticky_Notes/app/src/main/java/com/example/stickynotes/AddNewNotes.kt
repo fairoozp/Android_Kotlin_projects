@@ -17,25 +17,23 @@ class AddNewNotes : AppCompatActivity() {
         val saveBt : Button = findViewById(R.id.saveBt)
         val clearBt : Button = findViewById(R.id.clearBt)
         val homeBt : Button = findViewById(R.id.homeBt)
-        val notes : EditText = findViewById(R.id.notes)
+        val title1 : EditText = findViewById(R.id.title)
+        val notes1 : EditText = findViewById(R.id.notes)
 
-        clearBt.setOnClickListener { notes.text.clear() }
+        clearBt.setOnClickListener { notes1.text.clear() }
         homeBt.setOnClickListener { startActivity(Intent(this,MainActivity::class.java)) }
         saveBt.setOnClickListener {
-            if (notes.text.isNotEmpty()){
-                val note = notes.text.toString()
-                val result : Boolean = databaseHelper.insert(note)
+            if (notes1.text.isNotEmpty()){
+                val title = title1.text.toString()
+                val notes = notes1.text.toString()
+                val result : Boolean = databaseHelper.insert(title,notes)
                 when{
                     result -> Toast.makeText(applicationContext, "Data Saved", Toast.LENGTH_SHORT).show()
                     else -> Toast.makeText(applicationContext, "Failed", Toast.LENGTH_SHORT).show()
                 }
             }
-            notes.text.clear()
+            notes1.text.clear()
             startActivity(Intent(this, MainActivity::class.java))
         }
-    }
-    override fun onBackPressed() {
-        Toast.makeText(this, "Press Home to exit", Toast.LENGTH_SHORT).show()
-        //
     }
 }

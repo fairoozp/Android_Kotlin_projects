@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.ID
 import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.NOTES
 import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.TABLE_NAME
+import com.example.stickynotes.DatabaseContainer.StickyNotes.Companion.TITLE
 
 
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -15,6 +16,7 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         val stickyNotes = " CREATE TABLE " +
                 TABLE_NAME + " ( " +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                TITLE + " TEXT, " +
                 NOTES + " TEXT " + " ) "
         db!!.execSQL(stickyNotes)
     }
@@ -23,9 +25,10 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     }
     //Insert
     @Suppress("EqualsBetweenInconvertibleTypes")
-    fun insert(notes : String) : Boolean{
+    fun insert(title : String , notes : String) : Boolean{
         val db : SQLiteDatabase? = this.writableDatabase
         val contentValues = ContentValues()
+        contentValues.put(TITLE,title)
         contentValues.put(NOTES,notes)
         val insertData = db!!.insert(TABLE_NAME,null,contentValues)
         db.close()
@@ -38,17 +41,18 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         return db!!.rawQuery("SELECT * FROM $TABLE_NAME", null)
     }
     //Delete
-    fun delete(notes : String) : Boolean {
+    fun delete(id : String) : Boolean {
         val db : SQLiteDatabase? = this.writableDatabase
-        val deleteData = db!!.delete(TABLE_NAME, "$NOTES=?", arrayOf(notes))
+        val deleteData = db!!.delete(TABLE_NAME, "$ID=?", arrayOf(id))
         return deleteData != -1
     }
     //Update
-    fun update (note : String , notes: String) : Boolean {
+    fun update (id : String , title: String , notes: String) : Boolean {
         val db : SQLiteDatabase? = this.writableDatabase
         val contentValues = ContentValues()
+        contentValues.put(TITLE,title)
         contentValues.put(NOTES,notes)
-        val updateData = db!!.update(TABLE_NAME, contentValues , "$NOTES=?",arrayOf(note))
+        val updateData = db!!.update(TABLE_NAME, contentValues , "$ID=?",arrayOf(id))
         db.close()
         return updateData != -1
     }
@@ -58,7 +62,6 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
-
     companion object{
         private const val DATABASE_NAME = "Person.db"
         private const val DATABASE_VERSION = 1
