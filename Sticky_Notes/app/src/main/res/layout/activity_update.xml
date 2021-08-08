@@ -3,40 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:background="@drawable/back"
+    android:layout_height="match_parent"
     tools:context=".Update">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:padding="8dp"
-        android:background="@drawable/border"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sticky_notes"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/back"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:textSize="30sp"
             android:layout_marginTop="32dp"
             android:background="@drawable/border"
             android:ems="10"
-            android:textStyle="bold"
-            android:hint="Title"
-            android:textColor="@color/black"
+            android:gravity="center"
+            android:hint="@string/title"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:text=""
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
             tools:ignore="Autofill" />
 
         <EditText
@@ -44,21 +69,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:ems="10"
-            android:textColor="@color/black"
-            android:textSize="20sp"
             android:background="@drawable/border"
-            android:gravity="center|top"
+            android:ems="10"
+            android:gravity="center"
             android:hint="@string/enter_notes_here"
             android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             tools:ignore="Autofill" />
 
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:background="?android:attr/listDivider" />
 
         <LinearLayout
@@ -78,8 +104,9 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
+                android:textColor="#FFFFFF"
                 android:text="@string/clear"
-                tools:ignore="ButtonStyle" />
+                tools:ignore="ButtonStyle,TextContrastCheck" />
 
             <Button
                 android:id="@+id/delete"
@@ -89,8 +116,9 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:text="delete"
-                tools:ignore="ButtonStyle" />
+                android:textColor="#FFFFFF"
+                android:text="@string/delete"
+                tools:ignore="ButtonStyle,TextContrastCheck" />
 
             <Button
                 android:id="@+id/homeBt"
@@ -100,8 +128,9 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
+                android:textColor="#FFFFFF"
                 android:text="@string/home"
-                tools:ignore="ButtonStyle" />
+                tools:ignore="ButtonStyle,TextContrastCheck" />
 
         </LinearLayout>
 
@@ -112,7 +141,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            android:text="Update" />
+            android:text="@string/update"
+            android:textColor="#FFFFFF"
+            tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
 
