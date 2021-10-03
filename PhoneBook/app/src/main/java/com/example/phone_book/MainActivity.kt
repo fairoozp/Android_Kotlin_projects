@@ -13,5 +13,6 @@ class MainActivity : AppCompatActivity() {
         val fragmentView : FrameLayout = findViewById(R.id.fragment_view)
 
 
+
     }
 }
