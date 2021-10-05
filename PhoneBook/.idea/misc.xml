@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fairo/Git/Android_Kotlin_projects/PhoneBook/app/src/main/res/layout/activity_add.xml" value="0.2" />
+        <entry key="..\:/Users/fairo/Git/Android_Kotlin_projects/PhoneBook/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/fairo/Git/Android_Kotlin_projects/PhoneBook/app/src/main/res/layout/fragment_home.xml" value="0.1859375" />
         <entry key="..\:/Users/fairo/OneDrive/Documents/Git/Android_Kotlin_projects/PhoneBook/app/src/main/res/layout/activity_main.xml" value="0.14965277777777777" />
         <entry key="..\:/Users/fairo/OneDrive/Documents/Git/Android_Kotlin_projects/PhoneBook/app/src/main/res/layout/fragment_home.xml" value="0.14965277777777777" />
       </map>
