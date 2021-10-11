@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PhoneBook">
         <activity
+            android:name=".Name_layout"
+            android:exported="true" />
+        <activity
             android:name=".Add"
             android:exported="true" />
         <activity
