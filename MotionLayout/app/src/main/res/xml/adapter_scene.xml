@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnClick motion:targetId="@+id/userImageAdapter" />
+        <OnClick />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="50dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="50dp"
+            android:id="@+id/userImageAdapter"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@+id/userImageAdapter"
+            android:layout_width="wrap_content"
+            android:id="@+id/userNameAdapter"
+            motion:layout_constraintBottom_toBottomOf="@+id/userImageAdapter"
+            motion:layout_constraintStart_toEndOf="@+id/userImageAdapter"
+            android:layout_marginStart="16dp" />
+        <Constraint
+            android:layout_height="1dp"
+            android:layout_width="1dp"
+            android:id="@+id/userPhoneAdapter"
+            motion:layout_constraintStart_toEndOf="@+id/userNameAdapter"
+            motion:layout_constraintTop_toTopOf="@+id/userNameAdapter"
+            motion:layout_constraintBottom_toBottomOf="@+id/userNameAdapter" />
+        <Constraint
+            android:layout_height="1dp"
+            android:layout_width="1dp"
+            android:id="@+id/userEmailAdapter"
+            motion:layout_constraintTop_toTopOf="@+id/userPhoneAdapter"
+            motion:layout_constraintBottom_toBottomOf="@+id/userPhoneAdapter"
+            motion:layout_constraintStart_toEndOf="@+id/userPhoneAdapter" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/userPhoneAdapter"
+            motion:layout_constraintTop_toBottomOf="@+id/userNameAdapter"
+            motion:layout_constraintEnd_toEndOf="@+id/userNameAdapter"
+            motion:layout_constraintStart_toStartOf="@+id/userNameAdapter"
+            android:layout_marginTop="8dp" />
+        <Constraint
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/userImageAdapter"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/userEmailAdapter"
+            motion:layout_constraintTop_toBottomOf="@+id/userPhoneAdapter"
+            motion:layout_constraintEnd_toEndOf="@+id/userPhoneAdapter"
+            motion:layout_constraintStart_toStartOf="@+id/userPhoneAdapter"
+            android:layout_marginTop="8dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/userImageAdapter"
+            android:id="@+id/userNameAdapter"
+            motion:layout_constraintEnd_toEndOf="@+id/userImageAdapter"
+            motion:layout_constraintStart_toStartOf="@+id/userImageAdapter"
+            android:layout_marginTop="8dp" />
+    </ConstraintSet>
+</MotionScene>

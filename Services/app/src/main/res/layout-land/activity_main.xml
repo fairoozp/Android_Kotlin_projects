@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleServicesBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Background Services"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startServicesBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start services"
+        app:layout_constraintBottom_toBottomOf="@+id/stopServicesBackground"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stopServicesBackground"
+        app:layout_constraintTop_toTopOf="@+id/stopServicesBackground" />
+
+    <Button
+        android:id="@+id/stopServicesBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Stop services"
+        app:layout_constraintEnd_toStartOf="@+id/startServicesBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleServicesBackground" />
+
+    <TextView
+        android:id="@+id/serviceStatusBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Service Status"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/titleServicesBackground"
+        app:layout_constraintStart_toStartOf="@+id/titleServicesBackground"
+        app:layout_constraintTop_toBottomOf="@+id/stopServicesBackground" />
+
+    <TextView
+        android:id="@+id/titleServicesForeground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Foreground Services"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/stopServicesForeground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Stop Services"
+        app:layout_constraintEnd_toStartOf="@+id/startServicesForeground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/titleServicesForeground" />
+
+    <Button
+        android:id="@+id/startServicesForeground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Services"
+        app:layout_constraintBottom_toBottomOf="@+id/stopServicesForeground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stopServicesForeground"
+        app:layout_constraintTop_toTopOf="@+id/stopServicesForeground" />
+
+    <TextView
+        android:id="@+id/serviceStatusForeground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Service Status"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/titleServicesForeground"
+        app:layout_constraintStart_toStartOf="@+id/titleServicesForeground"
+        app:layout_constraintTop_toBottomOf="@+id/stopServicesForeground" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="1dp"
+        android:layout_height="409dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

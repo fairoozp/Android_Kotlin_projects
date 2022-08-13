@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Spinner</string>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Malayalam</item>
+        <item>Hindi</item>
+        <item>TestingTestingTestingTestingTestingTestingTestingTesting</item>
+        <item>TestingTestingTestingTestingTestingTestingTestingTestingTesting</item>
+        <item>TestingTestingTestingTestingTestingTestingTestingTestingTestingTesting</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+        <item>Testing</item>
+    </string-array>
+</resources>
